@@ -13,6 +13,22 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\ianch\\Desktop\\HBoostUltra\\wwwroot\\images\\about-bg.jpg",
+      "PackagePath": "staticwebassets\\images\\about-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ianch\\Desktop\\HBoostUltra\\wwwroot\\images\\buy-bg.jpg",
+      "PackagePath": "staticwebassets\\images\\buy-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ianch\\Desktop\\HBoostUltra\\wwwroot\\images\\home-bg.jpg",
+      "PackagePath": "staticwebassets\\images\\home-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ianch\\Desktop\\HBoostUltra\\wwwroot\\images\\software-bg.jpg",
+      "PackagePath": "staticwebassets\\images\\software-bg.jpg"
+    },
+    {
       "Id": "C:\\Users\\ianch\\Desktop\\HBoostUltra\\wwwroot\\js\\mercadopago.js",
       "PackagePath": "staticwebassets\\js\\mercadopago.js"
     },

@@ -28,3 +28,4 @@ C:\Users\ianch\Desktop\HBoostUltra\obj\Debug\net7.0\refint\HBoostUltra.dll
 C:\Users\ianch\Desktop\HBoostUltra\obj\Debug\net7.0\HBoostUltra.pdb
 C:\Users\ianch\Desktop\HBoostUltra\obj\Debug\net7.0\HBoostUltra.genruntimeconfig.cache
 C:\Users\ianch\Desktop\HBoostUltra\obj\Debug\net7.0\ref\HBoostUltra.dll
+c:\Users\ianch\Desktop\HBoostUltra\bin\Debug\net7.0\firebase.json
