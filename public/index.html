@@ -1,89 +1,218 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>H-Regedit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/12.4.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/12.4.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/12.4.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/12.4.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/12.4.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/12.4.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/12.4.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/12.4.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/12.4.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/12.4.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            scroll-behavior: smooth;
+            background-color: #f2f2f2;
         }
-      });
-    </script>
-  </body>
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background: linear-gradient(90deg, #1e3c72, #2a5298);
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        header h1 { margin: 0; font-size: 28px; }
+
+        nav { display: flex; gap: 25px; }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        nav a::after {
+            content: '';
+            display: block;
+            height: 3px;
+            background: #00bfff;
+            transition: width 0.3s;
+            width: 0;
+        }
+
+        nav a:hover::after,
+        nav a.active::after { width: 100%; }
+
+        nav a:hover,
+        nav a.active { color: #00bfff; }
+
+        /* Botón hamburguesa */
+        .menu-toggle { display: none; flex-direction: column; cursor: pointer; }
+        .menu-toggle div {
+            width: 28px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+
+        /* Secciones */
+        section {
+            padding: 120px 60px;
+            min-height: 100vh;
+            border-radius: 10px;
+            margin: 20px 50px;
+            color: #333;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .anim-element { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .anim-element.visible { opacity: 1; transform: translateY(0); }
+
+        #home { background: linear-gradient(135deg, #fceabb, #f8b500); }
+        #software { background: linear-gradient(135deg, #cfd9df, #e2ebf0); }
+        #buy { background: linear-gradient(135deg, #a1c4fd, #c2e9fb); }
+        #about { background: linear-gradient(135deg, #d4fc79, #96e6a1); }
+
+        .spacer { height: 80px; }
+
+        /* Botón volver arriba */
+        #btnUp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: none;
+            background-color: #00bfff;
+            color: white;
+            border: none;
+            padding: 14px 18px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            z-index: 1001;
+            box-shadow: 0px 6px 12px rgba(0,0,0,0.3);
+            transition: all 0.3s ease, transform 0.3s ease;
+        }
+        #btnUp:hover { background-color: #0095cc; transform: scale(1.2) rotate(10deg); }
+
+        /* Botones animados */
+        button.action-btn {
+            background-color: #1e3c72;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        button.action-btn:hover {
+            background-color: #2a5298;
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header { flex-direction: row; justify-content: space-between; padding: 10px 20px; }
+            nav { position: absolute; top: 60px; right: 0; flex-direction: column; width: 200px; padding: 10px; display: none; border-radius: 0 0 10px 10px; background: linear-gradient(180deg, #1e3c72, #2a5298); }
+            nav.active { display: flex; }
+            .menu-toggle { display: flex; }
+            section { margin: 20px 15px; padding: 100px 20px; }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>H-Regedit</h1>
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <div></div><div></div><div></div>
+    </div>
+    <nav id="menu">
+        <a href="#home" onclick="navigateTo(event, 'home')">Home</a>
+        <a href="#software" onclick="navigateTo(event, 'software')">Software</a>
+        <a href="#buy" onclick="navigateTo(event, 'buy')">Buy</a>
+        <a href="#about" onclick="navigateTo(event, 'about')">About</a>
+    </nav>
+</header>
+
+<div class="spacer"></div>
+
+<section id="home">
+    <h2 class="anim-element" style="transition-delay:0.1s">Home</h2>
+    <p class="anim-element" style="transition-delay:0.3s">Bienvenido a H-Regedit, la mejor plataforma de software.</p>
+    <button class="action-btn anim-element" style="transition-delay:0.5s">Explorar</button>
+</section>
+
+<section id="software">
+    <h2 class="anim-element" style="transition-delay:0.1s">Software</h2>
+    <p class="anim-element" style="transition-delay:0.3s">Aquí puedes explorar todos nuestros programas disponibles.</p>
+    <button class="action-btn anim-element" style="transition-delay:0.5s">Ver Software</button>
+</section>
+
+<section id="buy">
+    <h2 class="anim-element" style="transition-delay:0.1s">Buy</h2>
+    <p class="anim-element" style="transition-delay:0.3s">Selecciona el software que quieres comprar.</p>
+    <button class="action-btn anim-element" style="transition-delay:0.5s">Comprar Ahora</button>
+</section>
+
+<section id="about">
+    <h2 class="anim-element" style="transition-delay:0.1s">About</h2>
+    <p class="anim-element" style="transition-delay:0.3s">Conoce más sobre H-Regedit y nuestro equipo.</p>
+    <button class="action-btn anim-element" style="transition-delay:0.5s">Saber Más</button>
+</section>
+
+<button id="btnUp" onclick="scrollToTop()">&#8679;</button>
+
+<script>
+    function toggleMenu() { document.getElementById('menu').classList.toggle('active'); }
+    function closeMenu() { document.getElementById('menu').classList.remove('active'); }
+
+    const animElements = document.querySelectorAll('.anim-element');
+    const animObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.2 });
+    animElements.forEach(el => animObserver.observe(el));
+
+    const btnUp = document.getElementById('btnUp');
+    const sections = document.querySelectorAll('section');
+    window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) { btnUp.style.display = "block"; } 
+        else { btnUp.style.display = "none"; }
+
+        sections.forEach(section => {
+            const top = section.offsetTop - 90;
+            const bottom = top + section.offsetHeight;
+            const id = section.getAttribute('id');
+            const link = document.querySelector(`nav a[href="#${id}"]`);
+            if (window.scrollY >= top && window.scrollY < bottom) { link.classList.add('active'); } 
+            else { link.classList.remove('active'); }
+        });
+    };
+
+    function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    function navigateTo(event, id) {
+        event.preventDefault();
+        const target = document.getElementById(id);
+        const headerOffset = 70;
+        const elementPosition = target.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+        closeMenu();
+    }
+</script>
+</body>
 </html>
